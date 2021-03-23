@@ -2,11 +2,11 @@
 
 ## Description
 
-Command line application to manage a company's employees database.
+POPULATE INFORMATION
 
 ### Link to repository:
 
-https://github.com/ATXiceman512/note_taker
+https://github.com/emarshall121/project-2
 
 ## Table of Contents
 
@@ -18,22 +18,24 @@ https://github.com/ATXiceman512/note_taker
 
 ## Installation
 
-Clone or download program files, run 'npm install' in the root directory of project. Once all dependencies have been downloaded, run 'npm start' to start the server, navigate http://localhost:3001/
+POPULATE INFORMATION
 
 ## Usage
 
 PICTURES HERE
-Command Line Interface for the user
 
 ## Credits
 
-ATXiceman512 - Github profile: https://github.com/ATXiceman512
+Emily Marschall - Github profile: https://github.com/emarshall121
+Justin Beard - Github profile: https://github.com/ATXiceman512
+Chikezie Amadi - Github profile: https://github.com/ChikezieAmadi
+Alexis
 
 ## License
 
 MIT License
 
-Copyright (c) [2021] [ATXiceman512]
+Copyright (c) [2021]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -55,14 +57,36 @@ SOFTWARE.
 
 ## Contributing
 
+GET SITE INFORMATION
+
+### bcrypt
+
+[Link to site]()
+
 ### Express
-[Link to site](https://www.npmjs.com/package/express)
+
+[Link to site]()
+
+### Express-Handlebars
+
+[Link to site]()
+
+### Express-Session
+
+[Link to site]()
+
+### MySql2
+
+[Link to site]()
+
+### nodemon
+
+[Link to site]()
+
+### sequelize
+
+[Link to site]()
 
 ### Heroku
-[Link to site](https://www.heroku.com/)
 
-### UUID
-[Link to site](https://www.npmjs.com/package/uuid)
-
-
-
+[Link to site]()
