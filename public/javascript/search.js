@@ -3,16 +3,34 @@ let bookDisplay = document.querySelector(".searchDisplay");
 // This function creates the cards
 const renderBook = function(){
   let searchTerm = document.getElementById("searchTerm").value;
-  fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyDHOg_t2vNBsORqK0ds6iUEqnxIpcAWthg`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(response) {
-      console.log(response.items[0]);
-      // const book = 
-      // make book cards and save buttons
+ 
+  // Call to Google Books API
+  $.ajax({
+    url: `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`,
+    dataType: "json",
+    success: function(data) {
+      // console.log(data.items[0].volumeInfo.title)
+      for(i=0; i<data.items.length; i++){
+        const card = document.createElement('div');
+        console.log(card);
+        card.className = 'card';
+        const title = document.createElement('div');
+        const author = document.createElement('div');
+        card.append(title);
+        card.append(author);
+        
 
-    })
+        title.innerHTML += "<h2>" + data.items[i].volumeInfo.title + "</h2>"
+        author.innerHTML += "<h3>" + data.items[i].volumeInfo.authors + "</h2>"
+        return card;
+
+      }
+      document.getElementById('results').appendChild (card);
+
+    },
+    type: 'GET'
+  });
+
 }
 
 document.getElementById("searchButton").addEventListener("click", renderBook);
@@ -30,4 +48,19 @@ const saveBook = function(){
 
 }
 
+let title, author, genre, pageCount, publishedDate;
+const saveButton = document.getElementById("saveButton");
+saveButton.addEventListener('click', async event => {
+  const data = { title, author, genre, pageCount, publishedDate };
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+  const response = await fetch('/api', options);
+  const json = await response.json();
+  console.log(json);
+  });
 
