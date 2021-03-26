@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,49 +23,29 @@
     </header>
         
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-
-        <ul id="myUL">
-          <li><a href="#"> Author</a></li>
-          <li><a href="#">Genre</a></li>
-        
-          <li><a href="#">Year Published</a></li>
-          <li><a href="#">Number of Pages</a></li>
-        
-          
-        </ul>
-
-
-        
-    
     <section class="sign-in">
-      <!-- Building sign in forn container-->
-      <div class="sign-in-form">
-        <h3>Sign-Up</h3>
+        <section></section>
+        <main id="main" class="main">
+        <article>
+          <section id="searchDisplay" class="results">
+            <div class="flex">
+              <input type="text" id="searchTerm" class="searchTerm" placeholder="Search books by name, author, genre and etc ..."/>
+              <input type="submit" value="submit" id="searchButton">
+          
+              <div id="displayResult" src="./test.js"></div>
+          
+            </div>
+          </section> 
+        </article>
+        </main> 
         
+        <div id="results"></div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <!-- <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script> -->
+          <script src="./test.js"></script>
+        </body>
 
-
-        <!-- the form-->
-        <form>
-          <label for="name">Enter Full Name:</label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            name="name"
-            id="name"
-            class="form-input"
-          />
-          <label for="email">Enter Email Address:</label>
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            id="email"
-            class="form-input"
-          />
-         </form>
-       </div>
-</section>
     <!-- footer -->
     <footer>
       <h2>Logo</h2>
@@ -74,24 +55,5 @@
 
 </html>
 
-<script>
-    function myFunction() {
-      // Declare variables
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById('myInput');
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName('li');
+
     
-      // Loop through all list items, and hide those who don't match the search query
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-        } else {
-          li[i].style.display = "none";
-        }
-      }
-    }
-    </script>
