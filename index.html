@@ -33,29 +33,32 @@
 
 
         <!-- the form-->
-        <form>
-          <label for="name">Enter Full Name:</label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            name="name"
-            id="name"
-            class="form-input"
-          />
-          <label for="email">Enter Email Address:</label>
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            id="email"
-            class="form-input"
-          />
-         
+        <form action="action_page.php" method="post">
+           
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
           
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
           
-        </form>
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        
       </div>
     </section>
+
+
+
 
       </section>
       <section id="reach-out" class="contact">
