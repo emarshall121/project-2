@@ -80,6 +80,8 @@ const saveBook = function(body, bookArray){
   });
 }
 
+
+// display search function
 document.getElementById(SaveButton).addEventListener("click", saveBook);
 
 var result = "Nothing found!";
