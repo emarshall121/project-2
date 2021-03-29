@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/emarshall121/project-2#readme",
   "dependencies": {
+    "ajax": "0.0.4",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
