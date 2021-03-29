@@ -12,6 +12,25 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  Books.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(bookData => {
+    if(!bookData){
+      res.status(400).json({ message: "Book was not found" });
+      return;
+    }
+    res.json(bookData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(404).json(err);
+  })
+})
+
 // CREATES A NEW BOOK IN THE DB BASED ON USER SAVE
 router.post('/', (req, res) => {
   Books.create({
@@ -20,7 +39,7 @@ router.post('/', (req, res) => {
     author: req.body.author,
     genre: req.body.genre,
     published: req.body.published,
-    pages: req.body.pages
+    pages: req.body.apges
   })
   .then(bookData => res.json(bookData))
   .catch(err => {
