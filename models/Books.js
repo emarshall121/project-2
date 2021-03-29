@@ -1,7 +1,29 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Books extends Model {}
+class Books extends Model {
+  static uplikes(body, models) {
+    return models.Like.create({
+      user_id: body.user_id,
+      book_id: body.book_id
+    }).then(() => {
+      return Books.findOne({
+        where: {
+          id: body.book_id
+        },
+        attributes: [
+          'id',
+          'title',
+          'author',
+          'genre',
+          'published',
+          'pages',
+          [sequelize.literal('(SELECT COUNT(*) FROM like WHERE books.id = like.book_id)'), 'like_count']
+        ],
+      });
+    });
+  }
+}
 
 Books.init(
   {
