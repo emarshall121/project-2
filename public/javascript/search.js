@@ -52,15 +52,16 @@ let title, author, genre, pageCount, publishedDate;
 const saveButton = document.getElementById("saveButton");
 saveButton.addEventListener('click', async event => {
   const data = { title, author, genre, pageCount, publishedDate };
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  };
-  const response = await fetch('/api', options);
-  const json = await response.json();
-  console.log(json);
+  // const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(data)
+  // };
+  // const response = await fetch('/api', options);
+  // const json = await response.json();
+  // console.log(json);
+  console.log(data);
   });
 

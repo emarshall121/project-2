@@ -4,6 +4,9 @@ const h4 = document.createElement('h4')
 const a = document.createElement('a')
 const img = document.createElement('img')
 
+
+
+
 // This function creates the cards
 const renderBook = function(){
   let searchTerm = document.getElementById("searchTerm").value;
@@ -51,33 +54,20 @@ const renderBook = function(){
 document.getElementById("searchButton").addEventListener("click", renderBook);
 
 // This function will save data to db
-const saveBook = function(body, bookArray){
-  let bookData = {
-    id: 1,
-    title: "title",
-    author: "Mr. Ed",
-    genre: "Sci-Fiction",
-    pages: 110,
-    published: 1998
-  }
-
-  const bookBeingSaved = [];
-
-  app.post('/api/books', (req, res) => {
-    console.log('I received a save request!');
-    console.log(req.body);
-    const data = req.body;
-    bookBeingSaved.push(data);
-    console.log(bookBeingSaved);
-    Response.json({
-      status: 'success',
-      title: data.title,
-      author: data.author,
-      genre: data.categories,
-      pages: data.pageCount,
-      publishedDate: data.publishedDate
-    });
+// 
+let title, author, genre, pageCount, publishedDate;
+const saveButton = document.getElementById("saveButton");
+saveButton.addEventListener('click', async event => {
+  const data = { title, author, genre, pageCount, publishedDate };
+  // const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(data)
+  // };
+  // const response = await fetch('/api', options);
+  // const json = await response.json();
+  // console.log(json);
+  console.log(data);
   });
-}
-
-document.getElementById(SaveButton).addEventListener("click", saveBook);
