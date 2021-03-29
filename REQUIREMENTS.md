@@ -11,11 +11,11 @@
 # Project Requirements
 
 ## BACKEND REQUIREMENTS
-* Use MySQL and the Sequelize ORM for the database
-* Have both GET and POST routes for retrieving and adding new data
+* Use MySQL and the Sequelize ORM for the database - DONE
+* Have both GET and POST routes for retrieving and adding new data - DONE
 * Be deployed using Heroku (with data)
-* Use Node.js and Express.js to create a RESTful APIs
-* Must protect API keys and sensitive information with environment variables
+* Use Node.js and Express.js to create a RESTful APIs - DONE
+* Must protect API keys and sensitive information with environment variables - DONE
 
 ## FRONT-END REQUIREMENTS
 * Use a template engine, such as Handlebars.js
