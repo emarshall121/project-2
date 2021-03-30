@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const { Users, Like, Books } = require('../models');
 const Users = require('../models/Users');
-const Like = require('../models/like');
+const Likes = require('../models/Likes');
 const Books = require('../models/Books');
 
 
@@ -11,12 +11,12 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    // include: [
-    //   {
-    //     model: Like,
-    //     attributes: ['book_id']
-    //   }
-    // ]
+    include: [
+      {
+        model: Books,
+        attributes: ['id']
+      }
+    ]
   })
   .then(dbUserData => {
     if(!dbUserData){
@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  User.findOne({
+  Users.findOne({
     where: {
       email: req.body.email
     }
@@ -61,7 +61,7 @@ router.post('/login', (req, res) => {
 
 router.post('/', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
+  Users.create({
     email: req.body.email,
     password: req.body.password
   })
@@ -81,7 +81,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  User.findAll({
+  Users.findAll({
     attributes: {exclude: ['password']}
   })
   .then(dbUserData => res.json(dbUserData))

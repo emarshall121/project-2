@@ -17,7 +17,7 @@ Like.init(
         key: 'id'
       }
     },
-    post_id: {
+    book_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'books',
@@ -30,7 +30,7 @@ Like.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'like'
+    modelName: 'likes'
   }
 );
 
