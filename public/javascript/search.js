@@ -1,5 +1,3 @@
-let bookDisplay = document.querySelector(".searchDisplay");
-
 // This function creates the cards
 const renderBook = function(){
   let searchTerm = document.getElementById("searchTerm").value;
@@ -23,33 +21,33 @@ const renderBook = function(){
         results.append(level3);
 
         // Book Title
-        const titleH2 = document.createElement("h2");
-        titleH2.classList = ('card-title h1');
-        titleH2.innerHTML = data.items[i].volumeInfo.title;
-        bookInfo.append(titleH2);
+        const titleH1 = document.createElement("h1");
+        titleH1.classList = ('card-title h1');
+        titleH1.innerHTML = `Title: ${data.items[i].volumeInfo.title}`;
+        bookInfo.append(titleH1);
         results.append(bookInfo);
 
         // Create Author(s)
         const authorH3 = document.createElement("h3");
-        authorH3.innerHTML = data.items[i].volumeInfo.authors;
+        authorH3.innerHTML = `Author(s): ${data.items[i].volumeInfo.authors}`;
         bookInfo.append(authorH3);
         results.append(bookInfo);
 
         // Create Genre
         const genreH3 = document.createElement("h3");
-        genreH3.innerHTML = data.items[i].volumeInfo.categories;
+        genreH3.innerHTML = `Genre: ${data.items[i].volumeInfo.categories}`;
         bookInfo.append(genreH3);
         results.append(bookInfo);
 
         // Create published date
         const publishedH3 = document.createElement("h3");
-        publishedH3.innerHTML = data.items[i].volumeInfo.publishedDate;
+        publishedH3.innerHTML = `Published Date: ${data.items[i].volumeInfo.publishedDate}`;
         bookInfo.append(publishedH3);
         results.append(bookInfo);
 
         // Create page count
         const pageCountH3 = document.createElement("h3");
-        pageCountH3.innerHTML = data.items[i].volumeInfo.pageCount;
+        pageCountH3.innerHTML = `Page Count: ${data.items[i].volumeInfo.pageCount}`;
         bookInfo.append(pageCountH3);
         results.append(bookInfo);
 
@@ -68,55 +66,24 @@ const renderBook = function(){
 
 }
 
+// document.getElementById("saveButton").addEventListener("click", function () {
+//   event.preventDefault();
+//   console.log("You are saving a book");
+//   var title = document.getElementById('title').value
+//   var author = document.getElementById('author').value
+//   var genre = document.getElementById('genre').value
+//   var publishedDate = document.getElementById('publishedDate').value
+//   var pageCount = document.getElementById('pageCount').value
+
+//   let newBook = {
+//     title: title,
+//     author: author,
+//     genre: genre,
+//     publishedDate: publishedDate,
+//     pageCount: pageCount
+//   }
+//   console.log(newBook)
+//   axios.post("api/books/", newBook)
+// })
+
 document.getElementById("searchButton").addEventListener("click", renderBook);
-
-// This function will save data to db
-const saveBook = function(){
-  let myObject = {
-    id: 1,
-    title: "title",
-    author: "Mr. Ed",
-    genre: "Sci-Fiction",
-    pages: 110,
-    published: 1998
-  }
-
-}
-
-document.getElementById("saveButton").addEventListener("click", function () {
-  event.preventDefault();
-  console.log("You are saving a book");
-  var title = document.getElementById('title').value
-  var author = document.getElementById('author').value
-  var genre = document.getElementById('genre').value
-  var publishedDate = document.getElementById('publishedDate').value
-  var pageCount = document.getElementById('pageCount').value
-
-  const bookInfo = {
-    method: 'POST',
-    Headers: {
-      'Content-Type': 'application/json'
-    },
-    
-  }
-
-})
-// let title, author, genre, pageCount, publishedDate;
-// const saveButton = document.getElementById("saveButton");
-// saveButton.addEventListener('click', async event => {
-//   const data = { title, author, genre, pageCount, publishedDate };
-//   const options = {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: {
-      
-//     }
-//   };
-//   const response = await fetch('/api', options);
-//   const json = await response.json();
-//   console.log(json);
-//   console.log(event);
-//   });
-
