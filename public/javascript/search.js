@@ -57,7 +57,7 @@ const renderBook = function(){
         // Creates the save button
         const saveButton = document.createElement("button");
         saveButton.innerHTML='SAVE';
-        saveButton.id = 'saveButton';
+        saveButton.id =  `saveButton ${i}`;
         bookInfo.append(saveButton);
       }
       // document.getElementById('results').appendChild (card);
@@ -83,20 +83,40 @@ const saveBook = function(){
 
 }
 
-let title, author, genre, pageCount, publishedDate;
-const saveButton = document.getElementById("saveButton");
-saveButton.addEventListener('click', async event => {
-  const data = { title, author, genre, pageCount, publishedDate };
-  // const options = {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(data)
-  // };
-  // const response = await fetch('/api', options);
-  // const json = await response.json();
-  // console.log(json);
-  console.log(event);
-  });
+document.getElementById("saveButton").addEventListener("click", function () {
+  event.preventDefault();
+  console.log("You are saving a book");
+  var title = document.getElementById('title').value
+  var author = document.getElementById('author').value
+  var genre = document.getElementById('genre').value
+  var publishedDate = document.getElementById('publishedDate').value
+  var pageCount = document.getElementById('pageCount').value
+
+  const bookInfo = {
+    method: 'POST',
+    Headers: {
+      'Content-Type': 'application/json'
+    },
+    
+  }
+
+})
+// let title, author, genre, pageCount, publishedDate;
+// const saveButton = document.getElementById("saveButton");
+// saveButton.addEventListener('click', async event => {
+//   const data = { title, author, genre, pageCount, publishedDate };
+//   const options = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: {
+      
+//     }
+//   };
+//   const response = await fetch('/api', options);
+//   const json = await response.json();
+//   console.log(json);
+//   console.log(event);
+//   });
 

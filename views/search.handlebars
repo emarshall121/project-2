@@ -1,3 +1,4 @@
+<h2>{{search}}</h2>
 <main id="main" class="main">
 <article>
   <section id="searchDisplay" class="results">
@@ -15,7 +16,7 @@
       <img class="activator" src="images/office.jpg">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4" id="title:{{">Card Title<i class="material-icons right">more_vert</i></span>
+      <span class="card-title activator grey-text text-darken-4" id="title:{{}}">Card Title<i class="material-icons right">more_vert</i></span>
       <p><a href="#">This is a link</a></p>
     </div>
     <div class="card-reveal">
@@ -28,3 +29,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {{!-- <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script> --}}
 <script src="./test.js"></script>
+
+
+
+  <section></section>
+<main id="main" class="main">
+<article>
+  <section id="searchDisplay" class="results">
+    <div class="flex">
+      <input type="text" id="searchTerm" class="searchTerm" placeholder="Search books by name, author, genre and etc ..."/>
+      <input type="submit" value="submit" id="searchButton">
+      <input type="submit" value="save" id="saveButton">
+
+      
+    </div>
+  </section> 
+</article>
+</main> 
+
+<div id="results"></div>
+
+<script src="./javacript/search.js"></script>

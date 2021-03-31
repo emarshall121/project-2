@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  User.findOne({
+  Users.findOne({
     where: {
       email: req.body.email
     }
@@ -60,8 +60,9 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  console.log("You hit the user creation route!")
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
+  Users.create({
     email: req.body.email,
     password: req.body.password
   })
@@ -81,7 +82,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  User.findAll({
+  Users.findAll({
     attributes: {exclude: ['password']}
   })
   .then(dbUserData => res.json(dbUserData))
