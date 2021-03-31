@@ -60,6 +60,7 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  console.log("You hit the user creation route!")
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   Users.create({
     email: req.body.email,
