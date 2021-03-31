@@ -55,12 +55,13 @@ router.post('/login', (req, res) => {
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
-      
+      document.location.replace('/dashboard');
     })
   })
 })
 
 router.post('/', (req, res) => {
+  console.log("You hit the user creation route!")
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   Users.create({
     email: req.body.email,
